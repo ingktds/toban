@@ -12,7 +12,12 @@ sub startup {
   my $r = $self->routes;
 
   # Normal route to controller
-  $r->get('/')->to('toban#list');
+  #$r->get('/')->to('toban#list');
+
+  # API
+  #$r->get('/v1/members')->to('toban#list');
+  $r->get('/v1/calendar')->to('garbage_collection_calendar#list');
+
 }
 
 1;
