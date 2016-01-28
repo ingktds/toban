@@ -3,5 +3,10 @@
         "host": "localhost",
         "port": 27017,
         "database": "toban"
+    },
+    "mojo": {
+        "base_url": "toban.ingk.xyz",
+        "www_url": "www.toban.ingk.xyz",
+        "api_url": "api.toban.ingk.xyz"
     }
 }
