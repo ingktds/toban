@@ -17,6 +17,7 @@ sub startup {
   # API
   #$r->get('/v1/members')->to('toban#list');
   $r->get('/v1/calendar')->to('garbage_collection_calendar#list');
+  $r->get('/v1/assignment')->to('toban#list');
 
 }
 
