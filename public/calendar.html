@@ -11,11 +11,23 @@
   <script>
     $(document).ready(function() {
 
-      // page is now ready, initialize the calendar...
-
       $('#calendar').fullCalendar({
-          //editable: true,
-          events: 'http://api.toban.dip.jp/v1/calendar'
+        eventClick: function(calEvent, jsEvent, view) {
+
+        },
+        firstDay: 1,
+        eventSources: [
+          {
+            url: 'http://api.toban.ingk.xyz/v1/assignment',
+            editable: true,
+          },
+          {
+            url: 'http://api.toban.ingk.xyz/v1/calendar',
+            color: '#3CB371',
+            editable: false,
+          }
+        ],
+        eventOrder: '-title'
       })
 
     }); 
