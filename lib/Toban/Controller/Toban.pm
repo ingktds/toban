@@ -13,4 +13,14 @@ sub list {
     
 }
 
+sub update {
+    my $c = shift;
+
+    my $calendar = Toban::Model::Toban->list;
+    $calendar->update({
+        start => $c->param('date');
+        title => $c->param('member');
+    });
+}
+
 1;
