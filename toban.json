@@ -1,4 +1,7 @@
 {
+    "hypnotoad": {
+        "listen": ["http://*:8000"]
+    },
     "mongo": {
         "host": "localhost",
         "port": 27017,
