@@ -12,9 +12,6 @@
     $(document).ready(function() {
 
       $('#calendar').fullCalendar({
-        eventClick: function(calEvent, jsEvent, view) {
-
-        },
         firstDay: 1,
         eventSources: [
           {
@@ -27,7 +24,7 @@
             editable: false,
           }
         ],
-        eventOrder: '-title'
+        eventOrder: 'order'
       })
 
     }); 
