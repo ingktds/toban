@@ -5,19 +5,17 @@ use Mojo::Base 'Mojolicious';
 sub startup {
   my $self = shift;
 
-  # Documentation browser under "/perldoc"
-  $self->plugin('PODRenderer');
+  # Config
+  my $config = $self->plugin('JSONConfig');
 
   # Router
   my $r = $self->routes;
 
-  # Normal route to controller
-  #$r->get('/')->to('toban#list');
-
   # API
-  #$r->get('/v1/members')->to('toban#list');
   $r->get('/v1/calendar')->to('garbage_collection_calendar#list');
   $r->get('/v1/assignment')->to('toban#list');
+
+  $r->put('/v1/assignment')->to('toban#update');
 
 }
 
