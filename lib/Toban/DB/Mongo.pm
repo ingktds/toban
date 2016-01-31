@@ -9,16 +9,17 @@ has 'collection' => (
 __PACKAGE__->meta->make_immutable();
 no Mouse;
 
-use JSON::XS;
 use MongoDB;
+use Mojolicious;
+use Mojolicious::Plugin::JSONConfig;
 
 sub get_collection {
     my $self = shift;
 
     # Mojoliciousの設定ファイル読み込み
-    my $line = load_config( '/Users/ingktds/repos/toban/toban.json' );
-    my $json = JSON::XS->new->ascii->pretty->allow_nonref->utf8;
-    my $config = $json->decode( $line );
+    my $config = Mojolicious::Plugin::JSONConfig->register(
+        Mojolicious->new, {file => '../../../toban.json'}
+    );
     
     my $client = MongoDB::MongoClient->new(
         host => $config->{mongo}{host},
@@ -29,14 +30,6 @@ sub get_collection {
     my $collection = $database->get_collection($self->collection);
 
     return $collection;
-}
-
-sub load_config {
-    my $file = shift;
-    local $/ = undef;
-    open my $fh, '<', $file or die $!;
-    my $line = <$fh>;
-    return $line;
 }
 
 1;
