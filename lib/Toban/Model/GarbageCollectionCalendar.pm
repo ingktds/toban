@@ -38,6 +38,7 @@ sub _get_calendar {
         $self->push_calendar({
                 start => $doc->{start},
                 title => $doc->{title},
+                order => $doc->{id},
         });
     }
 }
