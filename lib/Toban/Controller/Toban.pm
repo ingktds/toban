@@ -18,8 +18,8 @@ sub update {
 
     my $calendar = Toban::Model::Toban->list;
     $calendar->update({
-        start => $c->param('date');
-        title => $c->param('member');
+        start => $c->param('date'),
+        title => $c->param('member'),
     });
 }
 
