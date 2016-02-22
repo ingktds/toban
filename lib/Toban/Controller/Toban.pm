@@ -16,11 +16,20 @@ sub list {
 sub update {
     my $c = shift;
 
-    my $calendar = Toban::Model::Toban->list;
+    $c->res->headers->header( 'Access-Control-Allow-Origin' => $c->app->config->{mojo}{www_url} );
+    $c->res->headers->header( 'Access-Control-Allow-Credentials' => 'true' );
+    $c->res->headers->header( 'Access-Control-Allow-Methods' => 'PUT, OPTIONS' );
+    $c->res->headers->header( 'Access-Control-Allow-Headers' => 'Accept, Content-Type' );
+    $c->res->headers->header( 'Access-Control-Max-Age' => '3600' );
+
+    my $calendar = Toban::Model::Toban->init;
     $calendar->update({
         start => $c->param('date'),
         title => $c->param('member'),
+        id => $c->param('id'),
     });
+
+    $c->render(json => $calendar);
 }
 
 1;
