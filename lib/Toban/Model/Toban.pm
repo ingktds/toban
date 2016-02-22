@@ -19,11 +19,20 @@ no Mouse;
 
 use Toban::DB::Mongo;
 
-sub list {
-    my $self = shift;
+sub init {
+    my $class = shift;
 
-    my $toban = __PACKAGE__->new();
+    my $toban = $class->new();
     $toban->_get_calendar;
+
+    return $toban;
+}
+
+sub list {
+    my $class = shift;
+
+    my $toban = $class->init;
+
     return $toban->toban;
 }
 
@@ -33,7 +42,6 @@ sub _get_calendar {
     my $mongo = Toban::DB::Mongo->new( collection => 'Toban');
     my $collection = $mongo->get_collection();
     my $calendars = $collection->find;
-
     while ( my $doc = $calendars->next ) {
         $self->push_toban({
                 start => $doc->{start},
@@ -48,18 +56,18 @@ sub update {
     my $start = $args->{start};
     my $title = $args->{title};
 
+    # update MongoDB
     my $mongo = Toban::DB::Mongo->new( collection => 'Toban');
     my $collection = $mongo->get_collection();
-    my $calendars = $collection->find;
 
-    $calendars->update_one({
+    $collection->update_one(
         { "start" => $start },
         { '$set' =>
             {
                 "title" => $title,
             }
         }
-    });
+    );
 }
 
 1;
