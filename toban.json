@@ -8,8 +8,10 @@
         "database": "toban"
     },
     "mojo": {
-        "base_url": "toban.ingk.xyz",
-        "www_url": "www.toban.ingk.xyz",
-        "api_url": "api.toban.ingk.xyz"
+        "host": {
+            "base": "toban.ingk.xyz",
+            "www": "www.toban.ingk.xyz",
+            "api": "api.toban.ingk.xyz"
+        }
     }
 }
