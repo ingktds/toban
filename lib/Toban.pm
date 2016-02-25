@@ -18,6 +18,9 @@ sub startup {
   # preflight requestを受け入れるためOPTIONSが要る
   $r->any( ['OPTIONS', 'PUT'] => '/v1/assignment' )->to( 'toban#update' );
 
+  # Authentication
+  $r->get( '/login' )->to( 'login#index' );
+  $r->post( '/login' )->to( 'login#authenticate' );
 }
 
 1;
