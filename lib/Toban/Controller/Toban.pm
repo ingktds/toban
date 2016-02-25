@@ -1,6 +1,5 @@
 package Toban::Controller::Toban;
 use Mojo::Base 'Mojolicious::Controller';
-use Mojo::JSON;
 use Toban::Model::Toban;
 
 sub list {
