@@ -21,6 +21,9 @@ sub startup {
   # Authentication
   $r->get( '/login' )->to( 'login#index' );
   $r->post( '/login' )->to( 'login#authenticate' );
+
+  # Calendar
+  $r->get( '/calendar' )->to( 'calendar#index' );
 }
 
 1;
