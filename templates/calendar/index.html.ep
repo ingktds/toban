@@ -1,0 +1,9 @@
+% layout 'default';
+% title '上尾市日の出ゴミ捨て場清掃当番カレンダー';
+%= t div => ( id => 'calendar' )
+%= stylesheet 'fullcalendar/fullcalendar.css'
+%= javascript 'fullcalendar/lib/jquery.min.js'
+%= javascript 'fullcalendar/lib/moment.min.js'
+%= javascript 'fullcalendar/fullcalendar.js'
+%= javascript 'fullcalendar/lang/ja.js'
+%= javascript 'js/toban.js'
