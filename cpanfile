@@ -5,3 +5,4 @@ requires 'MongoDB', '== v1.2.1';
 requires 'JSON::XS', '== 3.01';
 requires 'DateTime', '== 1.21';
 requires 'Data::Printer', '== 0.38';
+requires 'IO::Socket::SSL', '== 2.024';
