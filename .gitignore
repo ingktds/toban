@@ -2,4 +2,4 @@ local/
 script/test.pl
 script/hypnotoad.pid
 log/
-etc/
+etc/ssl/
