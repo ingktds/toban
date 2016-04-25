@@ -131,14 +131,6 @@ DISTRIBUTIONS
       base 0
       strict 0
       warnings 0
-  Cpanel-JSON-XS-3.0213
-    pathname: R/RU/RURBAN/Cpanel-JSON-XS-3.0213.tar.gz
-    provides:
-      Cpanel::JSON::XS 3.0213
-    requirements:
-      ExtUtils::MakeMaker 0
-      Pod::Text 2.08
-      Pod::Usage 1.33
   Crypt-URandom-0.36
     pathname: D/DD/DDICK/Crypt-URandom-0.36.tar.gz
     provides:
@@ -705,7 +697,6 @@ DISTRIBUTIONS
       JSON::MaybeXS 1.003005
     requirements:
       Carp 0
-      Cpanel::JSON::XS 2.3310
       ExtUtils::CBuilder 0.27
       ExtUtils::MakeMaker 0
       File::Spec 0
@@ -1278,6 +1269,17 @@ DISTRIBUTIONS
     requirements:
       ExtUtils::MakeMaker 0
       Test::More 0.88
+  Sub-Uplevel-0.25
+    pathname: D/DA/DAGOLDEN/Sub-Uplevel-0.25.tar.gz
+    provides:
+      Sub::Uplevel 0.25
+    requirements:
+      Carp 0
+      ExtUtils::MakeMaker 6.17
+      constant 0
+      perl 5.006
+      strict 0
+      warnings 0
   Test-Data-1.24
     pathname: B/BD/BDFOY/Test-Data-1.24.tar.gz
     provides:
@@ -1352,6 +1354,22 @@ DISTRIBUTIONS
       List::Util 1.09
       Scalar::Util 1.09
       Test::Builder 0
+  Test-Exception-0.43
+    pathname: E/EX/EXODIST/Test-Exception-0.43.tar.gz
+    provides:
+      Test::Exception 0.43
+    requirements:
+      Carp 0
+      Exporter 0
+      ExtUtils::MakeMaker 0
+      Sub::Uplevel 0.18
+      Test::Builder 0.7
+      Test::Builder::Tester 1.07
+      Test::Harness 2.03
+      base 0
+      perl 5.006001
+      strict 0
+      warnings 0
   Test-Fatal-0.014
     pathname: R/RJ/RJBS/Test-Fatal-0.014.tar.gz
     provides:
