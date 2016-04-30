@@ -2,24 +2,25 @@ package Toban::DB::Mongo;
 use Mouse;
 
 has 'collection' => (
-    is  => 'rw',
-    isa => 'Str',
+    is       => 'rw',
+    isa      => 'Str',
+    required => 1,
 );
 
 __PACKAGE__->meta->make_immutable();
 no Mouse;
 
 use MongoDB;
-use Mojolicious;
-use Mojolicious::Plugin::JSONConfig;
+use Toban::Model::Config;
 
 sub get_collection {
     my $self = shift;
 
     # Mojoliciousの設定ファイル読み込み
-    my $config = Mojolicious::Plugin::JSONConfig->register(
-        Mojolicious->new, {file => '../../../toban.json'}
-    );
+    my $config = Toban::Model::Config->new(
+        file => '../../../toban.json'
+    )->config;
+
     
     my $client = MongoDB::MongoClient->new(
         host => $config->{mongo}{host},
