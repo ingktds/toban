@@ -11,6 +11,7 @@ __PACKAGE__->meta->make_immutable();
 no Mouse;
 
 use autodie;
+use IO::File;
 use JSON::XS;
 
 sub load_config {
@@ -18,10 +19,10 @@ sub load_config {
 
     my $file = $self->file;
 
-    open my $fh, '<', $file;
+    my $fh = IO::File->new($file, 'r');
     local $/ = undef;
     my $str = <$fh>;
-    close $fh;
+    $fh->close;
 
     return $str;
 }
