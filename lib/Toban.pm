@@ -11,6 +11,9 @@ sub startup {
   # Router
   my $r = $self->routes;
 
+  # Root
+  $r->get( '/' )->to( 'root#index' );
+
   # API
   $r->get( '/v1/calendar' )->to( 'garbage_collection_calendar#list' );
   $r->get( '/v1/assignment' )->to( 'toban#list' );
