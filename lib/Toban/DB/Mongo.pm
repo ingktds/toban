@@ -18,7 +18,7 @@ sub get_collection {
 
     # Mojoliciousの設定ファイル読み込み
     my $config = Toban::Model::Config->new(
-        file => '../../../toban.json'
+        file => '/var/toban/toban.json'
     )->config;
 
     
