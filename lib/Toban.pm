@@ -26,6 +26,9 @@ sub startup {
 
   # Calendar
   $r->get( '/calendar' )->to( 'calendar#index' );
+
+  # Registration
+  $r->post( '/create' )->to( 'users#insert' );
 }
 
 1;
