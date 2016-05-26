@@ -22,12 +22,14 @@ sub startup {
   $r->any( ['OPTIONS', 'PUT'] => '/v1/assignment' )->to( 'toban#update' );
 
   # Authentication
+  $r->get( '/login' )->to( 'login#index' );
   $r->post( '/login' )->to( 'login#authenticate' );
 
   # Calendar
   $r->get( '/calendar' )->to( 'calendar#index' );
 
   # Registration
+  $r->get( '/create' )->to( 'users#index' );
   $r->post( '/create' )->to( 'users#insert' );
 }
 
