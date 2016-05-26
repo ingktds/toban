@@ -1,16 +1,9 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="utf-8">
-    <title>Toban</title>
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
-    <div class="container bg-info">
+% layout 'default';
+<div class="container bg-info">
     <div class="col-xs-8">
         <h1>Toban</h1>
         <p>Tobanはゴミ当番表を管理するWebサービスです。</p>
-        <button type="button" name="sign_up" class="btn btn-primary" onclick="location.href='https://www.toban.ingk.xyz/create.html'">新規登録</button>
+        <button type="button" name="sign_up" class="btn btn-primary" onclick="location.href='https://www.toban.ingk.xyz/create'">新規登録</button>
     </div>
     <div class="col-xs-4">
         <form method="post" action="login">
@@ -31,9 +24,7 @@
                 <button type="submit" name="login" class="btn btn-primary">ログイン</button>
             </div>
         </form>
-        </div>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="bootstrap/js/bootstrap.min.js"></script>
-</body>
-</html>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
