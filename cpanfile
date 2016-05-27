@@ -7,3 +7,4 @@ requires 'DateTime', '== 1.21';
 requires 'Data::Printer', '== 0.38';
 requires 'IO::Socket::SSL', '== 2.024';
 requires 'Test::Exception', '== 0.43';
+requires 'Crypt::SaltedHash', '== 0.09';

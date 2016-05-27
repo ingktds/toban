@@ -131,6 +131,15 @@ DISTRIBUTIONS
       base 0
       strict 0
       warnings 0
+  Crypt-SaltedHash-0.09
+    pathname: G/GS/GSHANK/Crypt-SaltedHash-0.09.tar.gz
+    provides:
+      Crypt::SaltedHash 0.09
+    requirements:
+      Digest 0
+      ExtUtils::MakeMaker 6.30
+      Test::Fatal 0
+      Test::More 0
   Crypt-URandom-0.36
     pathname: D/DD/DDICK/Crypt-URandom-0.36.tar.gz
     provides:
